@@ -1,0 +1,143 @@
+/* Seletor universal para aplicar as regras para todos os elementos da página*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Fundo da tela de login*/
+body {
+    background-color: #1a6cb0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Cartão branco contendo as informações do login*/
+.login-container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 440px;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-header h2 {
+    font-size: 20px;
+    color: #1f2937;
+    margin-bottom: 4px;
+}
+
+.login-header p {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+/* Define um espaço de 20px abaixo de cada bloco de pegunta (label + caixa de texto)*/
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus {
+    border-color: #0ea5e9;
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15);
+}
+
+/* Botão azul de Entrar*/
+.btn-submit {
+    width: 100%;
+    background: linear-gradient(135deg, #0ea5e9, #0284c7);
+    color: #ffffff;
+    border: none;
+    padding: 16px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer; /* Transforma o cursor naquela "mãozinha" */
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    opacity: 0.9;
+}
+
+.admin-access {
+    margin-top: 30px;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.divider span {
+    padding: 0 10px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #9ca3af;
+    letter-spacing: 0.5px;
+}
+
+.btn-admin {
+    width: 100%;
+    background-color: transparent; 
+    color: #0284c7;
+    border: 1px solid #bae6fd;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer; /* Transforma o cursor naquela "mãozinha" */
+    transition: background-color 0.3s ease;
+}
+
+.btn-admin:hover {
+    background-color: #f0f9ff;
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo-img {
+    max-width: 260px; /*Tamanho da logo*/
+    width: 100%; /*Imagem fica responsiva*/
+    height: auto; /*Mantem a mesma que a original*/
+    display: inline-block;
+}
