@@ -6,5 +6,5 @@ Projeto de extensão da Faeterj-Rio | Faculdade de Educação Tecnológica do Ri
 - Rafael de Miranda
 - Nicholas Dias
 - Vinicius Borges
-- Ana Beatriz
-- Maria Eduarda
+- Ana Beatriz Ramos
+- Maria Eduarda Pereira
