@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Laser Brasil 3000 - Controle de Estoque</title>
+        <link rel="stylesheet" href="css/barra-lateral.css">
+        <!--COLOCAR O ICONE DA PAGINA DEPOIS AQUI-->
+    </head>
+    <body>
+        <div class="layout-wrapper">
+            <!--Barra lateral-->
+            <aside class="sidebar">
+                
+                <!--COLOCAR A LOGO GRAMNDE AQUI-->
+                <div class="sidebar-top">
+                    <div class="logo-container">
+                        <img src="images/logo-laserBrasil2.png" alt="Logo Laser Brasil 3000" class="logo-img">
+                    </div>
+                    <div class="sidebar-header">
+                        <p>Controle de Estoque</p>
+                    </div>
+                </div>
+
+                <nav class="nav-menu">
+                    <button class="nav-btn active" data-target="painel">Painel</button>
+                    <button class="nav-btn" data-target="produtos">Produtos</button>
+                    <button class="nav-btn" data-target="entrada-saida">Entradas e Saídas</button>
+                    <button class="nav-btn" data-target="utilizados">Mais Utilizados</button>
+                </nav>
+            </aside>
+
+            <main class="main-content">
+                <!--Seção "Painel"-->
+                <!--Ativa por padrão-->
+                <section id="painel" class="view-section active">
+                    <h1>Painel de estoque</h1>
+                    <!-- ADICIONAR O CONTEUDO AQUI-->
+                </section>
+
+                <!--Seção "Produtos"-->
+                <section id="produtos" class="view-section">
+                    <h1>Gestão de Produtos</h1>
+                    <!-- ADICIONAR O CONTEUDO AQUI-->
+                </section>
+
+                <!--Seção "Entradas e Saídas"-->
+                <section id="entrada-saida" class="view-section">
+                    <h1>Entradas e Saídas</h1>
+                    <!-- ADICIONAR O CONTEUDO AQUI-->
+                </section>
+
+                <!--Seção "Mais Utilizados"-->
+                <section id="utilizados" class="view-section">
+                    <h1>Produtos Mais Utilizados</h1>
+                    <!-- ADICIONAR O CONTEUDO AQUI-->
+                </section>
+            </main>
+        </div>
+    </body>
+    <!--Chamo o script da barra lateral aqui-->
+    <script src="js/barra-lateral.js"></script>
+</html>

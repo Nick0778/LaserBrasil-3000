@@ -1,0 +1,128 @@
+/* Seletor universal para aplicar as regras para todos os elementos da página*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f8fafc;
+    color: #1f2937;
+}
+
+.layout-wrapper {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/*Barra lateral */
+.sidebar {
+    width: 260px;
+    background-color: #ffffff;
+    border-right: 1px solid #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+/* Bloco superior da barra lateral (logo + titulo*/
+.sidebar-top {
+    border-bottom: 1px solid #f3f4f6;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+}
+
+.sidebar-header {
+    text-align: left;
+    padding-left: 20px;
+}
+
+.sidebar-header p {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #6b7280;
+}
+
+/* Menu de navegação*/
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px;
+    flex-grow: 1;
+}
+
+.nav-btn {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 12px 16px;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #4b5563;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-btn:hover {
+    background-color: #f3f4f6;
+    color: #111827;
+}
+
+/*Quando selecionado, adiciona um tom de azul claro no botão */
+.nav-btn.active {
+    background-color: #17a2b8;
+    color: #ffffff;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+/* Aqui é o controle de visibilidade das seções*/
+
+/* Esconde todas as seções por padrão*/
+.view-section {
+    display: none;
+}
+
+/* Exibe somente a seção que possuir a classe `active`*/
+.view-section.active {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/*Animação suave de aparição das seções*/
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo-container {
+    text-align: center;
+    padding: 0 15px;
+    margin-bottom: 12px;
+}
+
+.logo-img {
+    max-width: 170px; /*Tamanho da logo*/
+    width: 100%; /*Imagem fica responsiva*/
+    height: auto; /*Mantem a mesma que a original*/
+    display: inline-block;
+}
