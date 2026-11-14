@@ -1,0 +1,201 @@
+/* --- DEFINIÇÃO DAS CORES --- */
+
+:root {
+    --cor-ciano: #06b6d4; 
+    --cor-ciano-escuro: #4A707A;             
+    --cor-cinza-claro: #f4f6f9;  
+    --cor-branco: #ffffff;             
+    --cor-preto: #111827;              
+    --cor-cinza: #6b7280;
+    --cor-borda: #C8C8C8;              
+    --cor-verde: #16a34a;              
+    --cor-amarelo: #ca8a04;            
+    --cor-vermelho: #dc2626;           
+}
+
+/* --- CONFIGURAÇÕES GERAIS --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: var(--cor-cinza-claro);
+    color: var(--cor-preto);
+    padding: 30px;
+}
+
+/* --- CAIXA PRINCIPAL E TOPO --- */
+
+.conteudo-principal {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: var(--cor-branco);
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.topo h2 {
+    font-size: 24px;
+    color: var(--cor-preto);
+}
+
+.topo p {
+    color: var(--cor-cinza);
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.btn-novo-produto {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cor-ciano);
+    color: var(--cor-branco);
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600; 
+}
+
+.btn-novo-produto:hover {
+    filter: brightness(0.95);
+    transform: translateY(-1px);
+    color: var(--cor-branco);
+}
+
+/* --- PARTE DE BUSCA --- */
+.busca {
+    margin-bottom: 20px;
+}
+
+.campo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.campo-form label {
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--cor-preto);
+}
+
+.campo-form input {
+    padding: 10px 14px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.campo-form input:focus {
+    border-color: var(--cor-ciano);
+}
+
+/* --- FILTROS DE PESQUISA (BOTÕES) --- */
+.filtros {
+    display: inline-flex;                  
+    gap: 4px;                              
+    background-color: var(--cor-cinza-claro); 
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    padding: 4px;                          
+    border-radius: 8px;                    
+    margin-top: 16px;                      
+    margin-bottom: 24px;
+}
+
+/* BOTÕES INATIVOS (DISCRETOS DENTRO DA CAIXA) */
+.filtros button {
+    padding: 6px 14px;
+    background-color: transparent;         
+    border: none;                          
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--cor-cinza);               
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filtros button:hover {
+    background-color: color-mix(in srgb, var(--cor-cinza) 15%, transparent);
+    color: var(--cor-preto);
+}
+
+.filtros button.ativo {
+    background-color: color-mix(in srgb, var(--cor-ciano) 15%, transparent); 
+    border: 1px solid var(--cor-ciano); 
+    color: var(--cor-ciano); 
+    font-weight: bold;
+}
+
+/* --- TABELA DE PRODUTOS --- */
+
+.tabela-produtos {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.tabela-produtos th, 
+.tabela-produtos td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #E2E8F0;
+    font-size: 14px;
+}
+
+.tabela-produtos th {
+    background-color: color-mix(in srgb, var(--cor-ciano) 16%, transparent);
+    color: var(--cor-ciano-escuro);
+    border-bottom: 1px solid var(--cor-ciano);
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+
+.tabela-produtos tbody tr:hover {
+    background-color: var(--cor-cinza-claro);
+}
+
+/* --- BOTÕES DE STATUS --- */
+
+.status-ok, 
+.status-esgotado, 
+.status-estoque-baixo {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;       
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.status-ok {
+    background-color: rgba(22, 163, 74, 0.15); 
+    color: var(--cor-verde);
+    border: 1px solid var(--cor-verde);   
+}
+
+.status-esgotado {
+    background-color: rgba(220, 38, 38, 0.15); 
+    color: var(--cor-vermelho); 
+    border: 1px solid var(--cor-vermelho);
+}
+
+.status-estoque-baixo {
+    background-color: rgba(202, 138, 4, 0.15);  
+    color: var(--cor-amarelo);
+    border: 1px solid var(--cor-amarelo);
+}

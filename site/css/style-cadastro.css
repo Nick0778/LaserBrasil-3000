@@ -1,0 +1,153 @@
+/* --- DEFINIÇÃO DAS CORES --- */
+:root {
+    --cor-ciano: #06b6d4; 
+    --cor-ciano-escuro: #0891b2;             
+    --cor-cinza-claro: #f4f6f9;  
+    --cor-branco: #ffffff;             
+    --cor-preto: #111827;              
+    --cor-cinza: #6b7280;
+    --cor-borda: #e2e8f0;              
+    --cor-verde: #16a34a;              
+    --cor-amarelo: #ca8a04;            
+    --cor-vermelho: #dc2626;           
+}
+
+/* --- CONFIGURAÇÕES GERAIS --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: var(--cor-cinza-claro);
+    color: var(--cor-preto);
+    padding: 40px 20px;
+}
+
+/* --- CAIXA PRINCIPAL E TOPO --- */
+.conteudo-principal {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.topo {
+    margin-bottom: 24px;
+}
+
+.topo h2 {
+    font-size: 24px;
+    color: var(--cor-preto);
+    font-weight: bold;
+}
+
+.topo p {
+    color: var(--cor-cinza);
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+/* --- CARD BRANCO DE CADASTRO --- */
+.cadastro {
+    background-color: var(--cor-branco);
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+/* --- FORMULÁRIO EM GRID (ORGANIZAÇÃO DAS COLUNAS) --- */
+.cadastro form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 24px;
+}
+
+.cadastro form > div.campo-form:nth-child(1) {
+    grid-column: span 2;
+}
+
+.cadastro form > div.campo-form:nth-child(6) {
+    grid-column: span 2;
+}
+
+.cadastro form > div.botoes-form {
+    grid-column: span 2;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 10px;
+    padding-top: 24px;
+    border-top: 1px solid var(--cor-borda);
+}
+
+/* --- ESTILO DOS CAMPOS DE FORMULÁRIO --- */
+.campo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.campo-form label {
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--cor-preto);
+}
+
+.campo-form input,
+.campo-form textarea {
+    padding: 12px 14px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    width: 100%;
+    background-color: var(--cor-branco);
+    color: var(--cor-preto);
+    transition: border-color 0.2s;
+}
+
+.campo-form input:focus,
+.campo-form textarea:focus {
+    border-color: var(--cor-ciano);
+}
+
+.campo-form textarea {
+    resize: vertical;
+}
+
+/* --- BOTÕES DO RODAPÉ --- */
+.btn-cancelar {
+    padding: 10px 22px;
+    background-color: var(--cor-branco);
+    border: 1px solid var(--cor-borda);
+    border-radius: 6px;
+    color: var(--cor-preto);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.btn-cancelar:hover {
+    background-color: var(--cor-cinza-claro);
+}
+
+.btn-salvar {
+    padding: 10px 26px;
+    background: var(--cor-ciano);
+    border: none;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: filter 0.2s;
+}
+
+.btn-salvar:hover {
+    opacity: 0.5;
+}
