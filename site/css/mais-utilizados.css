@@ -1,0 +1,237 @@
+/* ==========================================================
+   Página "Mais Utilizados"
+   Usa as mesmas bases do projeto (fonte, cores neutras, cards
+   brancos e filtro em "pílulas" da página de Produtos).
+   Tudo fica escopado em #utilizados para não afetar as outras
+   seções da barra lateral.
+   ========================================================== */
+
+#utilizados {
+    /* Tons de azul das barras (do 1º ao 5º colocado) */
+    --mu-azul-1: #1a6fb0;
+    --mu-azul-2: #3b82c4;
+    --mu-azul-3: #5a95c8;
+    --mu-azul-4: #7ba7d1;
+    --mu-azul-5: #94b8da;
+
+    --mu-azul-claro: #e3eff9;
+    --mu-trilho: #eef2f7;
+    --mu-texto: #111827;
+    --mu-texto-suave: #6b7280;
+    --mu-borda: #e5e7eb;
+}
+
+/* ---------- Cabeçalho da página ---------- */
+#utilizados .mu-cabecalho {
+    margin-bottom: 24px;
+}
+
+#utilizados .mu-cabecalho h1 {
+    font-size: 24px;
+    color: var(--mu-texto);
+}
+
+#utilizados .mu-cabecalho p {
+    margin-top: 4px;
+    font-size: 14px;
+    color: var(--mu-texto-suave);
+}
+
+/* ---------- Grade: gráfico (esquerda) + total (direita) ---------- */
+#utilizados .mu-grade {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr);
+    gap: 20px;
+    align-items: start;
+}
+
+#utilizados .mu-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 22px 24px 26px;
+    box-shadow: 0 1px 3px rgba(17, 24, 39, 0.08), 0 1px 2px rgba(17, 24, 39, 0.04);
+}
+
+#utilizados .mu-card h2 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--mu-texto);
+}
+
+/* ---------- Topo do card (título + filtro de período) ---------- */
+#utilizados .mu-card-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+
+/* Mesmo visual do filtro da página de Produtos (.filtros) */
+#utilizados .mu-periodo {
+    display: inline-flex;
+    gap: 4px;
+    padding: 4px;
+    background-color: #f1f5f9;
+    border-radius: 8px;
+}
+
+#utilizados .mu-periodo button {
+    padding: 6px 14px;
+    background-color: transparent;
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--mu-texto-suave);
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+#utilizados .mu-periodo button:hover {
+    background-color: rgba(107, 114, 128, 0.15);
+    color: var(--mu-texto);
+}
+
+#utilizados .mu-periodo button.ativo {
+    background-color: var(--mu-azul-1);
+    color: #ffffff;
+}
+
+#utilizados .mu-periodo button:focus-visible {
+    outline: 2px solid var(--mu-azul-1);
+    outline-offset: 2px;
+}
+
+/* ---------- Gráfico de barras horizontais ---------- */
+#utilizados .mu-barras {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+#utilizados .mu-barra-linha {
+    display: grid;
+    grid-template-columns: 200px minmax(0, 1fr) 32px;
+    align-items: center;
+    gap: 14px;
+}
+
+#utilizados .mu-barra-nome {
+    font-size: 13px;
+    font-weight: 500;
+    color: #374151;
+    white-space: nowrap;
+}
+
+#utilizados .mu-barra-trilho {
+    height: 24px;
+    background-color: var(--mu-trilho);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+#utilizados .mu-barra-preenchida {
+    height: 100%;
+    width: 0;
+    border-radius: 6px;
+    background-color: var(--mu-azul-1);
+    transition: width 0.6s ease;
+}
+
+#utilizados .mu-barra-preenchida[data-posicao="1"] { background-color: var(--mu-azul-1); }
+#utilizados .mu-barra-preenchida[data-posicao="2"] { background-color: var(--mu-azul-2); }
+#utilizados .mu-barra-preenchida[data-posicao="3"] { background-color: var(--mu-azul-3); }
+#utilizados .mu-barra-preenchida[data-posicao="4"] { background-color: var(--mu-azul-4); }
+#utilizados .mu-barra-preenchida[data-posicao="5"] { background-color: var(--mu-azul-5); }
+
+#utilizados .mu-barra-valor {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--mu-texto);
+    text-align: right;
+}
+
+/* ---------- Card "Total de saídas" ---------- */
+#utilizados .mu-total-subtitulo {
+    margin-top: 4px;
+    font-size: 13px;
+    color: var(--mu-texto-suave);
+}
+
+#utilizados .mu-totais {
+    list-style: none;
+    margin-top: 14px;
+}
+
+#utilizados .mu-total-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+#utilizados .mu-total-item:last-child {
+    border-bottom: none;
+}
+
+#utilizados .mu-total-posicao {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--mu-azul-claro);
+    color: var(--mu-azul-1);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+#utilizados .mu-total-nome {
+    flex-grow: 1;
+    font-size: 13px;
+    color: #374151;
+}
+
+#utilizados .mu-total-qtd {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--mu-texto);
+    white-space: nowrap;
+}
+
+/* ---------- Estado vazio ---------- */
+#utilizados .mu-vazio {
+    font-size: 14px;
+    color: var(--mu-texto-suave);
+    padding: 12px 0;
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 1000px) {
+    #utilizados .mu-grade {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 560px) {
+    #utilizados .mu-barra-linha {
+        grid-template-columns: minmax(0, 1fr) 36px;
+        row-gap: 6px;
+    }
+
+    #utilizados .mu-barra-nome {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #utilizados .mu-barra-preenchida {
+        transition: none;
+    }
+}
