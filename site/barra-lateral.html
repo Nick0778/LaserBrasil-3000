@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Laser Brasil 3000 - Controle de Estoque</title>
         <link rel="stylesheet" href="css/barra-lateral.css">
+        <link rel="stylesheet" href="css/mais-utilizados.css">
         <!--COLOCAR O ICONE DA PAGINA DEPOIS AQUI-->
     </head>
     <body>
@@ -52,12 +53,43 @@
 
                 <!--Seção "Mais Utilizados"-->
                 <section id="utilizados" class="view-section">
-                    <h1>Produtos Mais Utilizados</h1>
-                    <!-- ADICIONAR O CONTEUDO AQUI-->
+                    <header class="mu-cabecalho">
+                        <h1>Produtos Mais Utilizados</h1>
+                        <p>Itens com maior saída no período</p>
+                    </header>
+
+                    <div class="mu-grade">
+                        <!--Gráfico de barras: Top 5-->
+                        <article class="mu-card">
+                            <div class="mu-card-topo">
+                                <h2>Top 5 produtos com maior saída</h2>
+
+                                <!--Filtro de período-->
+                                <div class="mu-periodo" role="group" aria-label="Período">
+                                    <button type="button" data-dias="7" aria-pressed="false">7 dias</button>
+                                    <button type="button" data-dias="30" class="ativo" aria-pressed="true">30 dias</button>
+                                    <button type="button" data-dias="90" aria-pressed="false">90 dias</button>
+                                </div>
+                            </div>
+
+                            <!--Preenchido por js/mais-utilizados.js-->
+                            <ol class="mu-barras" id="mu-barras"></ol>
+                        </article>
+
+                        <!--Resumo: total de saídas-->
+                        <aside class="mu-card">
+                            <h2>Total de saídas</h2>
+                            <p class="mu-total-subtitulo" id="mu-total-subtitulo"></p>
+
+                            <!--Preenchido por js/mais-utilizados.js-->
+                            <ol class="mu-totais" id="mu-totais"></ol>
+                        </aside>
+                    </div>
                 </section>
             </main>
         </div>
     </body>
     <!--Chamo o script da barra lateral aqui-->
     <script src="js/barra-lateral.js"></script>
+    <script src="js/mais-utilizados.js"></script>
 </html>
