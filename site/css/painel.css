@@ -1,0 +1,289 @@
+/* Seção "Painel": resumo, alerta e tabela de inventário */
+/* Tudo está escopado em `#painel` para não interferir nas outras seções */
+
+#painel {
+    --navy: #10213c;
+    --blue: #1976bd;
+}
+
+#painel .summary-grid,
+#painel .alert,
+#painel .inventory-panel {
+    font-size: 13px;
+}
+
+#painel button,
+#painel input,
+#painel select {
+    font: inherit;
+}
+
+/* ---------- Cards de resumo ---------- */
+#painel .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 17px;
+    margin-bottom: 21px;
+}
+
+#painel .summary-card {
+    height: 103px;
+    padding: 22px 17px;
+    border: 1px solid #e6ebf2;
+    border-left: 5px solid var(--blue);
+    border-radius: 11px;
+    background: white;
+    box-shadow: 0 1px 2px #182b4510;
+}
+
+#painel .summary-card p {
+    margin: 0 0 7px;
+    color: #637b9e;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+#painel .summary-card strong {
+    color: var(--blue);
+    font-size: 31px;
+    line-height: 1;
+}
+
+#painel .summary-card.low { border-left-color: #ffb000; }
+#painel .summary-card.low strong { color: #e87800; }
+#painel .summary-card.empty { border-left-color: #ff2838; }
+#painel .summary-card.empty strong { color: #f20c1b; }
+
+/* ---------- Alerta ---------- */
+#painel .alert {
+    min-height: 64px;
+    padding: 12px 17px;
+    margin-bottom: 21px;
+    border: 1px solid #ffdf85;
+    border-radius: 11px;
+    background: #fffbeb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+#painel .alert-message {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #a34b00;
+}
+
+#painel .alert-message strong {
+    color: #873d00;
+    font-weight: 600;
+}
+
+#painel .alert-symbol {
+    width: 32px;
+    height: 32px;
+    flex: 0 0 32px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #ffedb0;
+    font-size: 17px;
+}
+
+#painel .alert-button {
+    border: 0;
+    border-radius: 8px;
+    padding: 10px 17px;
+    background: #ff9800;
+    color: #271400;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* ---------- Painel de inventário ---------- */
+#painel .inventory-panel {
+    overflow: hidden;
+    border: 1px solid #e6ebf2;
+    border-radius: 11px;
+    background: #fff;
+    box-shadow: 0 1px 2px #182b450d;
+}
+
+#painel .filters {
+    padding: 17px 17px 16px;
+    border-bottom: 1px solid #edf1f6;
+}
+
+#painel .search-box {
+    width: 279px;
+    height: 39px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 12px;
+    border: 1px solid #cbd8e8;
+    border-radius: 7px;
+    color: #8297b5;
+    margin-bottom: 10px;
+}
+
+#painel .search-box span {
+    font-size: 21px;
+    transform: rotate(-20deg);
+}
+
+#painel .search-box input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    color: var(--navy);
+    background: transparent;
+}
+
+#painel .search-box input::placeholder {
+    color: #8ca0bd;
+}
+
+#painel .filters select {
+    width: 100%;
+    height: 39px;
+    padding: 0 12px;
+    border: 1px solid #cbd8e8;
+    border-radius: 7px;
+    color: var(--navy);
+    background: white;
+    outline: 0;
+}
+
+#painel .status-filters {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2px;
+    margin-top: 10px;
+}
+
+#painel .status-filters button {
+    border: 0;
+    border-radius: 7px;
+    padding: 8px 13px;
+    color: #29405f;
+    background: #f1f4f8;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+#painel .status-filters button.selected {
+    background: white;
+    color: #1268aa;
+    font-weight: 600;
+    box-shadow: 0 1px 4px #172e4a30;
+}
+
+/* ---------- Tabela ---------- */
+#painel .table-wrap {
+    width: 100%;
+    overflow-x: auto;
+}
+
+#painel table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+#painel thead { height: 36px; }
+
+#painel th {
+    padding: 0 20px;
+    color: #536d91;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .25px;
+    white-space: nowrap;
+}
+
+#painel td {
+    height: 56px;
+    padding: 8px 20px;
+    border-top: 1px solid #edf1f6;
+    vertical-align: middle;
+}
+
+#painel th:first-child, #painel td:first-child { width: 36%; }
+#painel th:nth-child(2), #painel td:nth-child(2) { width: 16%; }
+#painel th:nth-child(3), #painel td:nth-child(3) { width: 16%; }
+#painel th:nth-child(4), #painel td:nth-child(4) { width: 10%; }
+#painel th:nth-child(5), #painel td:nth-child(5) { width: 22%; }
+
+#painel .number { text-align: right; }
+
+#painel .product-name,
+#painel .product-model {
+    display: block;
+}
+
+#painel .product-name {
+    color: #10213c;
+    font-weight: 500;
+    font-size: 12px;
+    margin-bottom: 2px;
+}
+
+#painel .product-model {
+    color: #627b9e;
+    font-size: 10px;
+}
+
+#painel .category {
+    display: inline-block;
+    padding: 4px 7px;
+    border-radius: 5px;
+    color: #1268b0;
+    background: #e6f3fc;
+    font-size: 10px;
+    font-weight: 500;
+}
+
+#painel .quantity { color: #101b2d; font-weight: 700; }
+#painel .quantity.zero { color: #f20d1c; }
+#painel .minimum { color: #60799d; }
+
+#painel .status {
+    display: inline-block;
+    border-radius: 20px;
+    padding: 4px 9px;
+    font-size: 10px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+#painel .status.ok { color: #008b61; border: 1px solid #80edc5; background: #f0fff9; }
+#painel .status.low-stock { color: #a85b00; border: 1px solid #ffd35e; background: #fffaf0; }
+#painel .status.out { color: #e21b2b; border: 1px solid #ffb8bd; background: #fff5f5; }
+
+#painel .table-footer {
+    padding: 11px 20px;
+    border-top: 1px solid #edf1f6;
+    color: #637b9e;
+    font-size: 10px;
+}
+
+/* ---------- Telas menores ---------- */
+@media (max-width: 900px) {
+    #painel .summary-grid { gap: 10px; }
+    #painel td, #painel th { padding-left: 12px; padding-right: 12px; }
+}
+
+@media (max-width: 650px) {
+    #painel .summary-grid { grid-template-columns: 1fr; gap: 9px; }
+    #painel .summary-card { height: 82px; padding: 15px; }
+    #painel .summary-card strong { font-size: 26px; }
+    #painel .alert { align-items: flex-start; flex-direction: column; }
+    #painel .alert-message { flex-wrap: wrap; font-size: 11px; }
+    #painel .alert-button { align-self: flex-end; }
+    #painel .search-box { width: 100%; }
+    #painel .status-filters { justify-content: flex-start; overflow-x: auto; }
+    #painel .status-filters button { white-space: nowrap; }
+    #painel table { min-width: 800px; }
+}

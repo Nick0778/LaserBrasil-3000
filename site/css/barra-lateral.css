@@ -142,3 +142,26 @@ body {
     font-size: 14px;
     color: #6b7280;
 }
+
+/* Rodapé da barra lateral (botão Sair) */
+.sidebar-footer {
+    padding: 0 10px;
+}
+
+.btn-sair {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #4b5563;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-sair:hover {
+    background-color: #f3f4f6;
+    color: #111827;
+}

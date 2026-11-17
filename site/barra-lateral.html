@@ -5,10 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Laser Brasil 3000 - Controle de Estoque</title>
         <link rel="stylesheet" href="css/barra-lateral.css">
+        <link rel="stylesheet" href="css/painel.css">
         <link rel="stylesheet" href="css/mais-utilizados.css">
         <link rel="stylesheet" href="css/style-produtos.css">
         <link rel="stylesheet" href="css/style-cadastro.css">
         <link rel="stylesheet" href="css/entradasesaidas.css">
+        <link rel="icon" type="image/png" href="images/lb-logo.png">
         <!--COLOCAR O ICONE DA PAGINA DEPOIS AQUI-->
     </head>
     <body>
@@ -32,6 +34,11 @@
                     <button class="nav-btn" data-target="entrada-saida">Entradas e Saídas</button>
                     <button class="nav-btn" data-target="utilizados">Mais Utilizados</button>
                 </nav>
+
+                <!--Sair (volta para a tela de login)-->
+                <div class="sidebar-footer">
+                    <a href="Login.html" class="btn-sair">Sair</a>
+                </div>
             </aside>
 
             <main class="main-content">
@@ -41,12 +48,179 @@
                 <section id="painel" class="view-section active">
 
                     <!--Cabeçalho da seção-->
-                    <header class="section-header">
-                        <h1>Painel de estoque</h1>
-                        <p>Visão geral dos itens de manutenção e suprimentos</p>
-                    </header>
+                    <div class="produtos-topo">
+                        <header class="section-header">
+                            <h1>Painel de estoque</h1>
+                            <p>Visão geral dos itens de manutenção e suprimentos</p>
+                        </header>
+                        <a href="#" id="btn-novo-produto-painel" class="btn-novo-produto">+ Novo produto</a>
+                    </div>
 
-                    <!-- ADICIONAR O CONTEUDO AQUI-->
+                    <!--Resumo do estoque-->
+                    <section class="summary-grid" aria-label="Resumo do estoque">
+                        <article class="summary-card total">
+                            <p>Itens cadastrados</p>
+                            <strong>14</strong>
+                        </article>
+                        <article class="summary-card low">
+                            <p>Estoque baixo</p>
+                            <strong>5</strong>
+                        </article>
+                        <article class="summary-card empty">
+                            <p>Esgotados</p>
+                            <strong>2</strong>
+                        </article>
+                    </section>
+
+                    <!--Alerta de produtos acabando-->
+                    <section class="alert">
+                        <div class="alert-message">
+                            <span class="alert-symbol">⚠</span>
+                            <strong>7 produtos estão acabando</strong>
+                            <span>(5 com estoque baixo e 2 esgotados)</span>
+                        </div>
+                        <button type="button" class="alert-button">Ver itens</button>
+                    </section>
+
+                    <!--Painel de inventário-->
+                    <section class="inventory-panel">
+                        <div class="filters">
+                            <label class="search-box">
+                                <span>⌕</span>
+                                <input type="search" placeholder="Buscar produto ou impressora...">
+                            </label>
+
+                            <select aria-label="Filtrar por categoria">
+                                <option>Todas as categorias</option>
+                                <option>Toner</option>
+                                <option>Cartucho</option>
+                                <option>Tinta</option>
+                                <option>Peça</option>
+                            </select>
+
+                            <div class="status-filters" aria-label="Filtrar por status">
+                                <button type="button" class="selected">Todos</button>
+                                <button type="button">Baixo / esgotado</button>
+                                <button type="button">Esgotados</button>
+                                <button type="button">OK</button>
+                            </div>
+                        </div>
+
+                        <div class="table-wrap">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>PRODUTO</th>
+                                        <th>CATEGORIA</th>
+                                        <th class="number">DISPONÍVEL</th>
+                                        <th class="number">ESTOQUE MÍNIMO</th>
+                                        <th>STATUS</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td><span class="product-name">Toner HP 105A Preto</span><span class="product-model">HP Laser 107w / MFP 135w</span></td>
+                                            <td><span class="category">Toner</span></td>
+                                            <td class="number quantity">24</td>
+                                            <td class="number minimum">8</td>
+                                            <td><span class="status ok">● OK</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="product-name">Toner HP 78A Preto</span><span class="product-model">HP LaserJet P1606dn</span></td>
+                                            <td><span class="category">Toner</span></td>
+                                            <td class="number quantity">5</td>
+                                            <td class="number minimum">8</td>
+                                            <td><span class="status low-stock">● Estoque baixo</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="product-name">Toner Brother TN-1060</span><span class="product-model">Brother HL-1202</span></td>
+                                            <td><span class="category">Toner</span></td>
+                                            <td class="number quantity zero">0</td>
+                                            <td class="number minimum">6</td>
+                                            <td><span class="status out">● Esgotado</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="product-name">Toner Samsung MLT-D111S</span><span class="product-model">Samsung M2020 / M2070</span></td>
+                                            <td><span class="category">Toner</span></td>
+                                            <td class="number quantity">12</td>
+                                            <td class="number minimum">5</td>
+                                            <td><span class="status ok">● OK</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="product-name">Cartucho Epson 544 Ciano</span><span class="product-model">Epson L3150 / L5190</span></td>
+                                            <td><span class="category">Cartucho</span></td>
+                                            <td class="number quantity">3</td>
+                                            <td class="number minimum">6</td>
+                                            <td><span class="status low-stock">● Estoque baixo</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="product-name">Cartucho HP 667XL Preto</span><span class="product-model">HP DeskJet 2774</span></td>
+                                            <td><span class="category">Cartucho</span></td>
+                                            <td class="number quantity">18</td>
+                                            <td class="number minimum">6</td>
+                                            <td><span class="status ok">● OK</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="product-name">Cartucho Epson 544 Magenta</span><span class="product-model">Epson L3150 / L5190</span></td>
+                                            <td><span class="category">Cartucho</span></td>
+                                            <td class="number quantity">9</td>
+                                            <td class="number minimum">6</td>
+                                            <td><span class="status ok">● OK</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="product-name">Tinta Canon GI-10 Preta</span><span class="product-model">Canon G2160 / G3160</span></td>
+                                            <td><span class="category">Tinta</span></td>
+                                            <td class="number quantity">16</td>
+                                            <td class="number minimum">8</td>
+                                            <td><span class="status ok">● OK</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="product-name">Tinta Canon GI-10 Amarela</span><span class="product-model">Canon G2160 / G3160</span></td>
+                                            <td><span class="category">Tinta</span></td>
+                                            <td class="number quantity">4</td>
+                                            <td class="number minimum">6</td>
+                                            <td><span class="status low-stock">● Estoque baixo</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="product-name">Tinta Epson T544 Preta 65ml</span><span class="product-model">Epson L3150</span></td>
+                                            <td><span class="category">Tinta</span></td>
+                                            <td class="number quantity">22</td>
+                                            <td class="number minimum">10</td>
+                                            <td><span class="status ok">● OK</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="product-name">Fusor Brother HL-L2360</span><span class="product-model">Brother HL-L2360DW</span></td>
+                                            <td><span class="category">Peça</span></td>
+                                            <td class="number quantity">2</td>
+                                            <td class="number minimum">2</td>
+                                            <td><span class="status low-stock">● Estoque baixo</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="product-name">Rolo de Tração HP M404</span><span class="product-model">HP LaserJet Pro M404dn</span></td>
+                                            <td><span class="category">Peça</span></td>
+                                            <td class="number quantity zero">0</td>
+                                            <td class="number minimum">4</td>
+                                            <td><span class="status out">● Esgotado</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="product-name">Cilindro Brother DR-1060</span><span class="product-model">Brother HL-1202</span></td>
+                                            <td><span class="category">Peça</span></td>
+                                            <td class="number quantity">7</td>
+                                            <td class="number minimum">3</td>
+                                            <td><span class="status ok">● OK</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="product-name">Cabeça de Impressão Epson L3150</span><span class="product-model">Epson L3150</span></td>
+                                            <td><span class="category">Peça</span></td>
+                                            <td class="number quantity">1</td>
+                                            <td class="number minimum">2</td>
+                                            <td><span class="status low-stock">● Estoque baixo</span></td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <footer class="table-footer">Exibindo 14 de 14 produtos</footer>
+                    </section>
 
                 </section>
 
@@ -62,14 +236,14 @@
                         <a href="#" id="btn-novo-produto" class="btn-novo-produto">+ Novo produto</a>
                     </div>
                     <div class="parte-mae">
-                        <main class="conteudo-principal">
+                        <div class="conteudo-principal">
                             
                             <!-- PARTE DE BUSCA -->
                             <div class="busca">
                                 <form>
                                     <div class="campo-form">
-                                        <label for="produto">Buscar</label>
-                                        <input type="text" id="email" placeholder="Digite o nome do produto...">
+                                        <label for="busca-produto">Buscar</label>
+                                        <input type="text" id="busca-produto" placeholder="Digite o nome do produto...">
                                     </div>
                                 </form>                     
                             
@@ -120,7 +294,7 @@
                                 </div>
                             </div>
 
-                        </main>
+                        </div>
                     </div>
                 </section>
 
@@ -134,7 +308,7 @@
                     </header>
 
                     <div class="parte-mae">
-                        <main class="conteudo-principal">
+                        <div class="conteudo-principal">
                             <div class="cadastro">
                                 <form>
                                     <div class="campo-form">
@@ -174,7 +348,7 @@
                                     </div>
                                 </form>
                             </div>
-                        </main>
+                        </div>
                     </div>
                 </section>
 
@@ -183,8 +357,8 @@
 
                     <!--Cabeçalho da seção-->
                     <header class="section-header">
-                        <h1>Produtos Mais Utilizados</h1>
-                        <p>Itens com maior saída no período</p>
+                        <h1>Entradas e Saídas</h1>
+                        <p>Registre movimentações e consulte o histórico</p>
                     </header>
 
                     <div class="container">
@@ -335,8 +509,5 @@
     <script src="js/barra-lateral.js"></script>
     <script src="js/mais-utilizados.js"></script>
     <script src="js/aba-cadastro.js"></script>
-    <script>
-        // Aplica a data atual na caixinha de Data por padrão
-        document.getElementById("data").valueAsDate = new Date();
-    </script>
+    <script src="js/entradas-saidas.js"></script>
 </html>
