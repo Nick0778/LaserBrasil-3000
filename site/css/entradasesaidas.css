@@ -1,13 +1,15 @@
+/*
 body {
     padding: 30px;
     padding-top: 20px;
     background-color: #f3f5f9;
     font-family: Arial, sans-serif;
 }
+*/  
 
 .container {
     width: 100%;
-    max-width: 980px;
+    max-width: 100%;
     margin: 40px auto;
     padding: 20px;
     background-color: #f9f9f9;

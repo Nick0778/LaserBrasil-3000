@@ -6,6 +6,9 @@
         <title>Laser Brasil 3000 - Controle de Estoque</title>
         <link rel="stylesheet" href="css/barra-lateral.css">
         <link rel="stylesheet" href="css/mais-utilizados.css">
+        <link rel="stylesheet" href="css/style-produtos.css">
+        <link rel="stylesheet" href="css/style-cadastro.css">
+        <link rel="stylesheet" href="css/entradasesaidas.css">
         <!--COLOCAR O ICONE DA PAGINA DEPOIS AQUI-->
     </head>
     <body>
@@ -32,28 +35,267 @@
             </aside>
 
             <main class="main-content">
+
                 <!--Seção "Painel"-->
                 <!--Ativa por padrão-->
                 <section id="painel" class="view-section active">
-                    <h1>Painel de estoque</h1>
+
+                    <!--Cabeçalho da seção-->
+                    <header class="section-header">
+                        <h1>Painel de estoque</h1>
+                        <p>Visão geral dos itens de manutenção e suprimentos</p>
+                    </header>
+
                     <!-- ADICIONAR O CONTEUDO AQUI-->
+
                 </section>
 
                 <!--Seção "Produtos"-->
                 <section id="produtos" class="view-section">
-                    <h1>Gestão de Produtos</h1>
-                    <!-- ADICIONAR O CONTEUDO AQUI-->
+
+                    <!--Cabeçalho da seção-->
+                    <div class="produtos-topo">
+                        <header class="section-header">
+                            <h1>Produtos</h1>
+                            <p>Todos os itens cadastrados no estoque</p>
+                        </header>
+                        <a href="#" id="btn-novo-produto" class="btn-novo-produto">+ Novo produto</a>
+                    </div>
+                    <div class="parte-mae">
+                        <main class="conteudo-principal">
+                            
+                            <!-- PARTE DE BUSCA -->
+                            <div class="busca">
+                                <form>
+                                    <div class="campo-form">
+                                        <label for="produto">Buscar</label>
+                                        <input type="text" id="email" placeholder="Digite o nome do produto...">
+                                    </div>
+                                </form>                     
+                            
+                                <!-- FILTRO DE PESQUISA -->
+                                <div class="filtros">
+                                    <button class="ativo">Todos</button>
+                                    <button>Baixo</button>
+                                    <button>Esgotado</button>
+                                    <button>OK</button>
+                                </div>  
+
+                                <!-- LISTA DE PRODUTOS -->
+                                <div>
+                                    <table class="tabela-produtos">
+                                        <thead>
+                                            <tr>
+                                                <th>PRODUTO</th>
+                                                <th>CATEGORIA</th>
+                                                <th>QUANTIDADE</th>
+                                                <th>ESTOQUE MÍNIMO</th>
+                                                <th>STATUS</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Toner HP 105A</td>
+                                                <td>Toner</td>
+                                                <td>24</td>
+                                                <td>8</td>
+                                                <td><span class="status-ok">OK</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Toner Brother TN-1060</td>
+                                                <td>Toner</td>
+                                                <td>0</td>
+                                                <td>6</td>
+                                                <td><span class="status-esgotado">Esgotado</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Cartucho Epson 544 Ciano</td>
+                                                <td>Cartucho</td>
+                                                <td>3</td>
+                                                <td>6</td>
+                                                <td><span class="status-estoque-baixo">Estoque baixo</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </main>
+                    </div>
+                </section>
+
+                <!--Sub-Seção "Cadastro de produto"-->
+                <section id="cadastro-produto" class="view-section">
+
+                    <!--Cabeçalho da seção-->
+                    <header class="section-header">
+                        <h1>Cadastro de produto</h1>
+                        <p>Adicione um novo item ao estoque</p>
+                    </header>
+
+                    <div class="parte-mae">
+                        <main class="conteudo-principal">
+                            <div class="cadastro">
+                                <form>
+                                    <div class="campo-form">
+                                        <label for="nome-produto">Nome do produto*</label>
+                                        <input type="text" id="nome-produto" placeholder="Digite o nome..." required>
+                                    </div>
+
+                                    <div class="campo-form">
+                                        <label for="categoria">Categoria*</label>
+                                        <input type="text" id="categoria" placeholder="Ex: Toner..." required>    
+                                    </div>
+
+                                    <div class="campo-form">
+                                        <label for="modelo">Modelo compatível*</label>
+                                        <input type="text" id="modelo" placeholder="Ex: Cannon G1000..." required>
+                                    </div>
+
+                                    <div class="campo-form">
+                                        <label for="disponivel">Quantidade disponivel*</label>
+                                        <input type="number" id="disponivel" placeholder="0" required>
+                                    </div>
+
+                                    <div class="campo-form">
+                                        <label for="minimo">Estoque mínimo*</label>
+                                        <input type="number" id="minimo" placeholder="0" required>
+                                    </div>
+
+                                    <div class="campo-form">
+                                        <label for="observacoes">Observações</label>
+                                        <textarea id="observacoes" rows="4" placeholder="Fornecedor preferencial, rendimento, localização na prateleira..."></textarea>
+                                    </div>
+
+                                    <div class="botoes-form">
+                                        <!-- Botão com ID para cancelar e voltar para a listagem -->
+                                        <a href="#" id="btn-cancelar-cadastro" class="btn-cancelar">Cancelar</a>
+                                        <button type="submit" class="btn-salvar">Salvar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </main>
+                    </div>
                 </section>
 
                 <!--Seção "Entradas e Saídas"-->
                 <section id="entrada-saida" class="view-section">
-                    <h1>Entradas e Saídas</h1>
-                    <!-- ADICIONAR O CONTEUDO AQUI-->
+
+                    <!--Cabeçalho da seção-->
+                    <header class="section-header">
+                        <h1>Produtos Mais Utilizados</h1>
+                        <p>Itens com maior saída no período</p>
+                    </header>
+
+                    <div class="container">
+                        <h2>Registrar Movimentação</h2>
+
+                        <form action="">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <p>Produto</p>
+                                        <select id="produto" name="produto" required>
+                                            <option value="" disabled selected>Selecionar produto</option>
+                                            <option value="toner-hp-105a-preto">Toner HP 105A Preto</option>
+                                            <option value="toner-hp-78a-preto">Toner HP 78A Preto</option>
+                                            <option value="toner-brother-tn-1060">Toner Brother TN-1060</option>
+                                            <option value="toner-samsung-mlt-d111s">Toner Samsung MLT-D111S</option>
+                                            <option value="cartucho-epson-544-ciano">Cartucho Epson 544 Ciano</option>
+                                            <option value="cartucho-hp-667xl-preto">Cartucho HP 667XL Preto</option>
+                                            <option value="cartucho-epson-544-magenta">Cartucho Epson 544 Magenta</option>
+                                            <option value="tinta-canon-gi-10-preta">Tinta Canon GI-10 Preta</option>
+                                            <option value="tinta-canon-gi-10-amarela">Tinta Canon GI-10 Amarela</option>
+                                            <option value="tinta-epson-t544-preta-65ml">Tinta Epson T544 Preta 65ml</option>
+                                            <option value="fusor-brother-hl-l2360">Fusor Brother HL-L2360</option>
+                                            <option value="rolo-de-tracao-hp-m404">Rolo de Tração HP M404</option>
+                                            <option value="cilindro-brother-dr-1060">Cilindro Brother DR-1060</option>
+                                            <option value="cabeca-de-impressao-epson-l3150">Cabeça de Impressão Epson L3150</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <p>Tipo</p>
+                                        <div class="toggle">
+                                            <input type="radio" id="entrada" name="tipo" value="E" required>
+                                            <label for="entrada">Entrada</label>
+
+                                            <input type="radio" id="saida" name="tipo" value="S">
+                                            <label for="saida">Saída</label>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <p>Quantidade</p>
+                                        <input type="number" id="quantidade" name="quantidade" min="1" placeholder="0" required>
+                                    </td>
+
+                                    <td>
+                                        <p>Data</p>
+                                        <input type="date" id="data" name="data" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <p>Motivo ou cliente atendido</p>
+                                        <input type="text" id="motivo" name="motivo"
+                                            placeholder="Ex.: Manutenção OS #4830 - Escritório Almeida" required>
+                                    </td>
+
+                                    <td class="td-botao">
+                                        <button type="submit" class="btn-registrar">Registrar</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+
+                    <div class="container">
+                        <h2>Últimas movimentações</h2>
+                        <div class="tabela-wrapper">
+                            <table class="historico">
+                                <thead>
+                                    <tr>
+                                        <th>Data</th>
+                                        <th>Produto</th>
+                                        <th>Tipo</th>
+                                        <th class="num">Qtd.</th>
+                                        <th>Motivo / Cliente</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="historico">
+                                    <!-- Exemplos: apague quando as movimentações reais forem exibidas aqui -->
+                                    <tr>
+                                        <td class="col-data">14/10/2026</td>
+                                        <td class="col-produto">Toner HP 78A Preto</td>
+                                        <td><span class="tag saida">↑ Saída</span></td>
+                                        <td class="num">3</td>
+                                        <td>Contabilidade Souza &amp; Filhos</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-data">14/10/2026</td>
+                                        <td class="col-produto">Tinta Canon GI-10 Preta</td>
+                                        <td><span class="tag saida">↑ Saída</span></td>
+                                        <td class="num">4</td>
+                                        <td>Escola Municipal Rui Barbosa</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="col-data">13/10/2026</td>
+                                        <td class="col-produto">Toner HP 105A Preto</td>
+                                        <td><span class="tag entrada">↓ Entrada</span></td>
+                                        <td class="num">20</td>
+                                        <td>Compra - Distribuidora TecSupri</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </section>
 
                 <!--Seção "Mais Utilizados"-->
                 <section id="utilizados" class="view-section">
-                    <header class="mu-cabecalho">
+                    
+                    <!--Cabeçalho da seção-->
+                    <header class="section-header">
                         <h1>Produtos Mais Utilizados</h1>
                         <p>Itens com maior saída no período</p>
                     </header>
@@ -89,7 +331,12 @@
             </main>
         </div>
     </body>
-    <!--Chamo o script da barra lateral aqui-->
+    <!--Chamamos cada script necessário aqui-->
     <script src="js/barra-lateral.js"></script>
     <script src="js/mais-utilizados.js"></script>
+    <script src="js/aba-cadastro.js"></script>
+    <script>
+        // Aplica a data atual na caixinha de Data por padrão
+        document.getElementById("data").valueAsDate = new Date();
+    </script>
 </html>

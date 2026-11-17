@@ -20,11 +20,13 @@
     font-family: Arial, sans-serif;
 }
 
+/*
 body {
     background-color: var(--cor-cinza-claro);
     color: var(--cor-preto);
     padding: 40px 20px;
 }
+*/
 
 /* --- CAIXA PRINCIPAL E TOPO --- */
 .conteudo-principal {
@@ -136,6 +138,7 @@ body {
     background-color: var(--cor-cinza-claro);
 }
 
+/*
 .btn-salvar {
     padding: 10px 26px;
     background: var(--cor-ciano);
@@ -150,4 +153,27 @@ body {
 
 .btn-salvar:hover {
     opacity: 0.5;
+}
+*/
+
+.btn-salvar {
+    padding: 10px 26px;
+    background: linear-gradient(90deg, #1b6fb5, #1fb8c4);
+    border: none;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: filter 0.2s;
+}
+
+.btn-salvar:hover {
+    opacity: 0.5;
+}
+
+/* Alinha o cartão de cadastro à esquerda, logo abaixo do cabeçalho */
+#cadastro-produto .conteudo-principal {
+    max-width: 900px;
+    margin: 0; /* Remove o 'auto' para colar na mesma linha de alinhamento do título */
 }

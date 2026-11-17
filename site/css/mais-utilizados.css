@@ -22,6 +22,8 @@
 }
 
 /* ---------- Cabeçalho da página ---------- */
+
+/* TODO ESSE BLOCO NÃO É MAIS NECESSÁRIO. PRO CABEÇALHO DE CADA SEÇÃO USA-SE AGORA ´section-header´ DE ´css/barra-lateral.css´
 #utilizados .mu-cabecalho {
     margin-bottom: 24px;
 }
@@ -36,6 +38,7 @@
     font-size: 14px;
     color: var(--mu-texto-suave);
 }
+*/
 
 /* ---------- Grade: gráfico (esquerda) + total (direita) ---------- */
 #utilizados .mu-grade {

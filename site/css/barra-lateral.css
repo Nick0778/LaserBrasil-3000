@@ -126,3 +126,19 @@ body {
     height: auto; /*Mantem a mesma que a original*/
     display: inline-block;
 }
+
+/* Cabeçalho padrão de cada seção da página*/
+.section-header {
+    margin-bottom: 24px;
+}
+
+.section-header h1 {
+    font-size: 24px;
+    color: #111827;
+}
+
+.section-header p {
+    margin-top: 4px;
+    font-size: 14px;
+    color: #6b7280;
+}
